@@ -16,7 +16,7 @@ In order to get there, we select only those measurements in exponential phase us
 
 ```markdown
 # Prepare input variables
-refs=[i k]; %Integers with the number of the well in which there are competitions WTrfp+WTcfp  
+refs=[i k]; %Integers with the number of the well(s) in which there are competitions WTrfp+WTcfp  
 plt=[l m]; %Integers of the plates for which you want the model to run.  
 Tiempo0=1; % 1, so it includes the first measurement of each outgrowth before the exponential time points.  
 showfig=1; % 1 if you wish to see growth curves with the exponential phase time points highligthed  
@@ -28,6 +28,7 @@ showfig=1; % 1 if you wish to see growth curves with the exponential phase time 
   
 This is specially useful when you have many measurements per day (more than 3) and it will also make the aproximation of G more dependent of the phase in which cells are growing exponentially.
   
+    
 The next step is to order the variables of time in the structure ExpBgDataAll using **calculaTiempos**
   
 ```markdown
@@ -57,9 +58,9 @@ Finally we are ready to run our fitting function. It will build the predictor va
 ```markdown
 # Prepare input variables
 medicionesminimas=[i]; %Smallest number of valid measurements per well to be included in the fitting function
-`extraPlRefs = 0;` % The number of an extra plate that has references in it. Put 0 if you have references in every plate.
+extraPlRefs = 0; % The number of an extra plate that has references in it. Put 0 if you have references in every plate.
 # Execute Linear Model fitting script
-[bgdataAll_LM,data2_LM]=ModelASGC(BgDataSinFondo,plt,refs,OnlyMutStrain,OnlyRefStrain,medicionesminimas,datExtExponential,extraPlRefs);
+'[bgdataAll_LM,data2_LM]=ModelASGC(BgDataSinFondo,plt,refs,OnlyMutStrain,OnlyRefStrain,medicionesminimas,datExtExponential,extraPlRefs);'
 ```
 
 If you got here and the output bgdataAll_LM that contains your dataset and the vectors of solutions A, S, G and C it means you've made it to work! congratulations!

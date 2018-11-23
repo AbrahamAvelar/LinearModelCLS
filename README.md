@@ -11,17 +11,21 @@ The goal is to run the function ModelASGC as follows:
 In order to get there, first it is desirable to select only those measurements in exponential phase using ExtractExponentialPoints. First we prepare the input variables
 
 ```markdown
-    refs=[i j k]; %Integers with the number of the well in which there are competitions WTrfp+WTcfp  
-    plt=[i j k]; %Integers of the plates for which you want the model to run.  
-    Tiempo0=1; % 1, so it includes the first measurement of each outgrowth before the exponential time points.  
-    showfig=1 % 1 if you wish to see growth curves with all of the measurements and the exponential phase time points highligthed  
-    % BgDataAll is the structure with fields OD, RFP, CFP and t that comes from either LoadTecanFiles or from bgdataAll2BgDataAll  
+refs=[i j k]; %Integers with the number of the well in which there are competitions WTrfp+WTcfp  
+plt=[i j k]; %Integers of the plates for which you want the model to run.  
+Tiempo0=1; % 1, so it includes the first measurement of each outgrowth before the exponential time points.  
+showfig=1 % 1 if you wish to see growth curves with all of the measurements and the exponential phase time points highligthed  
+  %BgDataAll is the structure with fields OD, RFP, CFP and t that comes from either LoadTecanFiles or from bgdataAll2BgDataAll  
     
 ExpBgDataAll = ExtractExponentialPoints(BgDataAll, plt, showfig, refs, Tiempo0 )  
 ```
   
 This is specially useful when you have many measurements per day (more than 3) and it will also improve the aproximation of growth rates, G.
-
+  
+   
+     
+       
+       
 
 
 Parameters:  

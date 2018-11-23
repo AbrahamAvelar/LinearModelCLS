@@ -1,13 +1,12 @@
 ## Calculate G and S as in LINKPaper
 
-#### Here we describe how to run scripts that fit plate measurements of aging fluorescent co-cultures to the model Ax+ST+Gt+CTt = ln(RFP/CFP) .
+Here we describe how to run scripts that fit plate measurements of aging fluorescent co-cultures to the model Ax+ST+Gt+CTt = ln(RFP/CFP) .
 
-Please find functions in [Github_AbrahamAvelar](https://github.com/AbrahamAvelar)   
-
+Please find functions in [Github_AbrahamAvelar](https://github.com/AbrahamAvelar)  
 Most of them are in this [repository](https://github.com/AbrahamAvelar/Comparacion_Metodos_Envejecimiento/tree/master/Functions/CorrerModeloNS_ScriptsEGG)
 
-The goal is to run the function ModelASGC as follows:  
-
+  
+### The goal is to run the function ModelASGC as follows:  
 ```
 [bgdataAll_LM,data2_LM]=ModelASGC(bgdata,plt,refs,OnlyMutStrain,OnlyRefStrain,medicionesminimas,exp,extraPlRefs);
 

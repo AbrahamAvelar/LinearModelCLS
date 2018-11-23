@@ -1,20 +1,36 @@
-## Calculate G and S from large scale measurements  
+## Calculate G and S as in LINK_AvelarRivasEtAl
 
+#### Here we describe how to run scripts that fit plate measurements of aging fluorescent co-cultures to the model Ax+ST+Gt+CTt = ln(RFP/CFP)  
 
-#### Uso recomendado para calcular bigS del modelo Ax+ST+Gt+CTt = ln(RFP/CFP)  
-
-###### Escencialmente hay que correr esto  
+The goal is to run the function ModelASGC as follows:  
 
 ```markdown
 [bgdataAll_ASGC, data2_ASGC]= ModelASGC(bgdata,plt,refs,OnlyMutStrain,OnlyRefStrain,medicionesminimas,datExtExponential,extraPlRefs);
 ```
 
-Tiene estos parámetros a tomar en cuenta y algunos scripts que preparan para optimizar el input
-    refs=[i j k] % índices de las posiciones en el plato que tienen competencias Ref:Rev
-    plt=[i j k] % platos a los que les quieres calcular la S
+In order to get there, first it is desirable to select only those measurements in exponential phase using ExtractExponentialPoints. First we prepare the input variables
+
+`
+    refs=[i j k]; %Integers with the number of the well in which there are competitions WTrfp+WTcfp  
+    plt=[i j k]; %Integers of the plates for which you want the model to run.  
+    Tiempo0=1; % 1, so it includes the first measurement of each outgrowth before the exponential time points.  
+    showfig=1 % 1 if you wish to see growth curves with all of the measurements and the exponential phase time points highligthed  
+    % BgDataAll is the structure with fields OD, RFP, CFP and t that comes from either LoadTecanFiles or from bgdataAll2BgDataAll  
     
-    Tiempo0=1 % si también corres 'ExtractExponentialPoints' el siguiente comando esta bandera hace que incluya el t=0 de cada día
-    showfig=1 % Para que se vea la figura de los puntos de la Fase exponencial
+ExpBgDataAll = ExtractExponentialPoints(BgDataAll, plt, showfig, refs, Tiempo0 )  
+`
+  
+This is specially useful when you have many measurements per day (more than 3) and it will also improve the aproximation of growth rates, G.
+
+
+
+Parameters:  
+bgdata -> Structure that contains OD CFP and RFP. These structures may be the output from ReadTecanFiles, bgdataAll2BgDataAll, 
+
+Tiene estos parámetros a tomar en cuenta y algunos scripts que preparan para optimizar el input
+
+    
+
     ExpBgDataAll = ExtractExponentialPoints(BgDataAll, plt, showfig, refs, Tiempo0 )% Útil si se tienen muchos puntos por día. Mejora el cálculo de G
 
     odTh=.22; %qué cambio en OD es para un nuevo día

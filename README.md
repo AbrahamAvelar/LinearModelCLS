@@ -20,12 +20,16 @@ showfig=1 % 1 if you wish to see growth curves with all of the measurements and 
 ExpBgDataAll = ExtractExponentialPoints(BgDataAll, plt, showfig, refs, Tiempo0 )  
 ```
   
-This is specially useful when you have many measurements per day (more than 3) and it will also improve the aproximation of growth rates, G.
+This is specially useful when you have many measurements per day (more than 3) and it will also make the aproximation of G more dependent of the phase in which cells are in exponential phase.
   
-   
-     
+Then we calculate order the field variables of time in the structure ExpBgDataAll using calculaTiempos
+  
+```markdown
+odTh=0.22; %Threshold of the change  between consecutive measurements to be identified as a new outgrowths's measurement. %Sometimes it is necesary to change it between 0.2 and 0.4 to actually get good detection of each outgrowth plate growth curve.
+ExpBgDataAll = calculaTiempos(ExpBgDataAll, plt, odTh);
+```
        
-       
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%      
 
 
 Parameters:  
@@ -34,11 +38,6 @@ bgdata -> Structure that contains OD CFP and RFP. These structures may be the ou
 Tiene estos parámetros a tomar en cuenta y algunos scripts que preparan para optimizar el input
 
     
-
-    ExpBgDataAll = ExtractExponentialPoints(BgDataAll, plt, showfig, refs, Tiempo0 )% Útil si se tienen muchos puntos por día. Mejora el cálculo de G
-
-    odTh=.22; %qué cambio en OD es para un nuevo día
-    ExpBgDataAll = calculaTiempos(ExpBgDataAll, plt, odTh);
     bgdataPrueba=BgDataAll2bgdataEGG(ExpBgDataAll,plt,'CFP','RFP',exp); %convierte a formato EGG. exp=1Son datos que provienen de 'ExtractExponentialPoints', si no provienen de esa funcion, entrnces exp=0
     
     OnlyMutStrain = [i]; % indice o indices de las posiciones dentro del plato que tienen solo la cepa referencia CFP

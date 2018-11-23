@@ -26,9 +26,9 @@ showfig=1; % 1 if you wish to see growth curves with the exponential phase time 
 [ExpBgDataAll = ExtractExponentialPoints(BgDataAll, plt, showfig, refs, Tiempo0 )]
 ```
   
-This is specially useful when you have many measurements per day (more than 3) and it will also make the aproximation of G more dependent of the phase in which cells are in exponential phase.
+This is specially useful when you have many measurements per day (more than 3) and it will also make the aproximation of G more dependent of the phase in which cells are growing exponentially.
   
-The next step is to order the field variables of time in the structure ExpBgDataAll using **calculaTiempos**
+The next step is to order the variables of time in the structure ExpBgDataAll using **calculaTiempos**
   
 ```markdown
 # Prepare input variables
@@ -44,12 +44,12 @@ Now we substract background fluorescences. We prepare variables and use **restar
 ```markdown
 # Prepare input variables
 exp=1; % We put 1 because we have a structure only with exponential points which is the output of 'ExtractExponentialPoints'
-bgdataPrueba=**BgDataAll2bgdataEGG**(ExpBgDataAll,plt,'CFP','RFP',exp); 
+bgdataPrueba=BgDataAll2bgdataEGG(ExpBgDataAll,plt,'CFP','RFP',exp); 
 OnlyMutStrain = [i]; %Index or Indexes of the reference wells that have only WTcfp
 OnlyRefStrain = [j]; %Index or Indexes of the reference wells that have only WTrfp (the same FP as all of the mutants)
   
 # Execute background substraction script
-BgDataSinFondo = **restarFondoFPs**(bgdataPrueba, plt, OnlyMutStrain,OnlyRefStrain)
+BgDataSinFondo = restarFondoFPs(bgdataPrueba, plt, OnlyMutStrain,OnlyRefStrain)
 ```
 
 Finally we are ready to run our fitting function. It will build the predictor variables matrix for each plate and then fit them to their respective response vector using Matlab's regress function.

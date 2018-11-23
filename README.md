@@ -1,15 +1,13 @@
 ## Calculate G and S from large scale measurements  
 
 
-### Uso recomendado para calcular bigS del modelo Ax+ST+Gt+CTt = ln(RFP/CFP)  
+#### Uso recomendado para calcular bigS del modelo Ax+ST+Gt+CTt = ln(RFP/CFP)  
 
-### Escencialmente hay que correr esto  
+###### Escencialmente hay que correr esto  
 
 ```markdown
 [bgdataAll_ASGC, data2_ASGC]= ModelASGC(bgdata,plt,refs,OnlyMutStrain,OnlyRefStrain,medicionesminimas,datExtExponential,extraPlRefs);
 ```
-
-
 
 Tiene estos parámetros a tomar en cuenta y algunos scripts que preparan para optimizar el input
     refs=[i j k] % índices de las posiciones en el plato que tienen competencias Ref:Rev

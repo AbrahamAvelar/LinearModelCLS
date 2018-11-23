@@ -14,10 +14,10 @@ In order to get there, we select only those measurements in exponential phase us
 ```markdown
 
 # Prepare input variables
-`- refs=[i k];` %Integers with the number of the well in which there are competitions WTrfp+WTcfp  
-`- plt=[l m];` %Integers of the plates for which you want the model to run.  
-`- Tiempo0=1;` % 1, so it includes the first measurement of each outgrowth before the exponential time points.  
-`- showfig=1;` % 1 if you wish to see growth curves with the exponential phase time points highligthed  
+`refs=[i k];` %Integers with the number of the well in which there are competitions WTrfp+WTcfp  
+`plt=[l m];` %Integers of the plates for which you want the model to run.  
+`Tiempo0=1;` % 1, so it includes the first measurement of each outgrowth before the exponential time points.  
+`showfig=1;` % 1 if you wish to see growth curves with the exponential phase time points highligthed  
 -  %BgDataAll is the structure with fields OD, RFP, CFP and t that comes from either LoadTecanFiles or from bgdataAll2BgDataAll  
     
 # Execute exponential phase point extractor script
@@ -31,10 +31,10 @@ The next step is to order the field variables of time in the structure ExpBgData
   
 ```markdown
 # Prepare input variables
-odTh=0.22; %Threshold of the change  between consecutive measurements to be identified as a new outgrowths's measurement. urve.
+`odTh=0.22;` %Threshold of the change  between consecutive measurements to be identified as a new outgrowths's measurement.
   
 # Execute time ordering script
-ExpBgDataAll = **calculaTiempos**(ExpBgDataAll, plt, odTh);
+`ExpBgDataAll = calculaTiempos(ExpBgDataAll, plt, odTh);`
 ```
 It may be a good idea to play a bit with odTh depending of the strains, media and other factors that may change the dynamics or the magnitude of the growth curve with OD600. Usually values between 0.2 and 0.4 work just fine to detect at which measurements there is a new outgrowth. 
 

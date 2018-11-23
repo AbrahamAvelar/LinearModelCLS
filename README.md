@@ -4,14 +4,13 @@
 
 The goal is to run the function ModelASGC as follows:  
 
-```markdown
+```
 [bgdataAll_LM,data2_LM]=**ModelASGC**(bgdata,plt,refs,OnlyMutStrain,OnlyRefStrain,medicionesminimas,exp,extraPlRefs);
 
 ```
 
 In order to get there, we select only those measurements in exponential phase using ExtractExponentialPoints after preparing input variables.
 
-```markdown
 
 # Prepare input variables
 `refs=[i k];` %Integers with the number of the well in which there are competitions WTrfp+WTcfp  
@@ -23,7 +22,6 @@ In order to get there, we select only those measurements in exponential phase us
 # Execute exponential phase point extractor script
 [ExpBgDataAll = **ExtractExponentialPoints**(BgDataAll, plt, showfig, refs, Tiempo0 )]
 
-```
   
 This is specially useful when you have many measurements per day (more than 3) and it will also make the aproximation of G more dependent of the phase in which cells are in exponential phase.
   

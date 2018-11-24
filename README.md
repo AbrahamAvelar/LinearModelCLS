@@ -1,4 +1,4 @@
-## Calculate G and S as in LINKPaper
+## Calculate G and S using linear model fitting
 
 Here we describe how to run scripts that fit plate measurements of aging fluorescent co-cultures to the model Ax+ST+Gt+CTt = ln(RFP/CFP) .
 

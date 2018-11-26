@@ -40,7 +40,7 @@ ExpBgDataAll = calculaTiempos(ExpBgDataAll, plt, odTh);
 ```
 It may be a good idea to play a bit with odTh depending of the strains, media and other factors that may change the dynamics or the magnitude of the growth curve with OD600. Usually values between 0.2 and 0.4 work just fine to detect at which measurements there is a new outgrowth. 
 
-Now we substract background fluorescences. We prepare variables and use **restarFondoFPs**.
+Now we subtract background fluorescences. We prepare variables and use **restarFondoFPs**.
 
 ```markdown
 # Prepare input variables
@@ -49,7 +49,7 @@ bgdataPrueba=BgDataAll2bgdataEGG(ExpBgDataAll,plt,'CFP','RFP',exp);
 OnlyMutStrain = [i]; %Index or Indexes of the reference wells that have only WTcfp
 OnlyRefStrain = [j]; %Index or Indexes of the reference wells that have only WTrfp (the same FP as all of the mutants)
   
-# Execute background substraction script
+# Execute background subtraction script
 BgDataSinFondo = restarFondoFPs(bgdataPrueba, plt, OnlyMutStrain,OnlyRefStrain)
 ```
 

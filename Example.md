@@ -25,14 +25,14 @@ BgDataAllTest =
     t
 ```
 
-There are two variables loaded. While 'muts' has the positions for each mutants in this exaple, you must make sure that the BgDataAllTest structure has the relevant fields OD, CFP, RFP, and t.  Your structure may have other fields but it must contain these four. If you have a structure with other names in the fields, the function [BgDataAll2bgdataEGG](https://github.com/AbrahamAvelar/Comparacion_Metodos_Envejecimiento/tree/master/Functions/CorrerModeloNS_ScriptsEGG/PrepareRawDataToCalcNS) may be useful.
+There are two variables loaded the most important at this point is the structure BgDataAllTest. While the variable 'muts' has the positions for each mutants in this exaple, you must make sure that the BgDataAllTest structure has the relevant fields OD, CFP, RFP, and t.  Your structure may have other fields but it must contain these four. If you have a structure with other names in the fields, the function [BgDataAll2bgdataEGG](https://github.com/AbrahamAvelar/Comparacion_Metodos_Envejecimiento/tree/master/Functions/CorrerModeloNS_ScriptsEGG/PrepareRawDataToCalcNS) may be useful.
 
 
 Before fitting the dataset to the model, we get the exponential phase measurements.
  ```matlab
-refs = muts.refs
-plt = 1:2;
-Tiempo0 =1;
+refs = muts.refs %We have the positions of reference competitions stored in this variable
+plt = 1:2; %because this example dataset has plates 1 and 2.
+Tiempo0 =1; 
 showfig=1;
 ExpBgDataAll =  ExtractExponentialPoints(BgDataAllTest, plt, showfig, refs, Tiempo0 )
 ```

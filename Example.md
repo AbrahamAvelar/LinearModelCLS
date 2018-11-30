@@ -6,6 +6,7 @@ This is a step by step tutorial to fit the model A+ST+Gt+CTt = ln(RFP/CFP) to an
 You can follow this example to fit measurements from 2 plates of aging fluorescent co-cultures to the model Ax+ST+Gt+CTt = ln(RFP/CFP). 
 First you should download sample data [BgDataAllTest](https://github.com/AbrahamAvelar/LinearModelCLS/).  
 
+All of the functions are in [Github_AbrahamAvelar](https://github.com/AbrahamAvelar). Most of them are in [this folder](https://github.com/AbrahamAvelar/Comparacion_Metodos_Envejecimiento/tree/master/Functions/CorrerModeloNS_ScriptsEGG)  
 
 
 Next thing is to load it into your Matlab workspace  

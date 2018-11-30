@@ -5,11 +5,11 @@ You can follow this example to fit measurements from 2 plates of aging fluoresce
 First you should download sample data [BgDataAllTest](https://github.com/AbrahamAvelar/LinearModelCLS/).  
 
 Next thing is to load it into your Matlab workspace  
-```markdown
+```matlab
 load BgDataAllTest
 ```
 we see what's in this structure
-```markdown
+```matlab
 >>BgDataAllTest
 
 BgDataAllTest = 
@@ -20,22 +20,20 @@ BgDataAllTest =
     t
 ```
 
-%There are two variables loaded. While 'muts' has the positions for each mutants in this exaple, you must make sure that the BgDataAllTest structure has the relevant fields OD, CFP, RFP, and t.  Your structure may have other fields but it must contain these four. If you have a structure with other names in the fields, the function [BgDataAll2bgdataEGG](https://github.com/AbrahamAvelar/Comparacion_Metodos_Envejecimiento/tree/master/Functions/CorrerModeloNS_ScriptsEGG/PrepareRawDataToCalcNS) may be useful.
-
-    
+There are two variables loaded. While 'muts' has the positions for each mutants in this exaple, you must make sure that the BgDataAllTest structure has the relevant fields OD, CFP, RFP, and t.  Your structure may have other fields but it must contain these four. If you have a structure with other names in the fields, the function [BgDataAll2bgdataEGG](https://github.com/AbrahamAvelar/Comparacion_Metodos_Envejecimiento/tree/master/Functions/CorrerModeloNS_ScriptsEGG/PrepareRawDataToCalcNS) may be useful.
 
 
-
-
-
- ```markdown
+Before fitting the dataset to the model, we get the exponential phase measurements.
+ ```matlab
 refs = muts.refs
 plt = 1:2;
 Tiempo0 =1;
 showfig=1;
 ExpBgDataAll =  ExtractExponentialPoints(BgDataAllTest, plt, showfig, refs, Tiempo0 )
 ```
-
+If you used 'showfig'
+  
+Then we compute T
 ```markdown
 odTh=0.22;
 ExpBgDataAll = calculaTiempos(ExpBgDataAll, plt, odTh)

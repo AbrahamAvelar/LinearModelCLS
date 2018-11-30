@@ -13,9 +13,6 @@ Most of them are in this [repository](https://github.com/AbrahamAvelar/Comparaci
 
 ```
 
-
-Here you will find 
-
 In order to get there, we select only those measurements in exponential phase using **ExtractExponentialPoints** after preparing input variables.
 
 ```markdown

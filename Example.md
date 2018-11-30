@@ -31,14 +31,17 @@ Tiempo0 =1;
 showfig=1;
 ExpBgDataAll =  ExtractExponentialPoints(BgDataAllTest, plt, showfig, refs, Tiempo0 )
 ```
-If you used ```showfig = 1``` then one figure per plate should be printed to the screen. They show all of the measurements with lines and circles show the selected measurements that were extracted by the function.
+If you used ```showfig = 1``` then one figure per plate should be printed to the screen. lines show all of the measurements and empty circles in different colour show the selected measurements that were extracted by the function.
   
-Then we compute T
+Then we compute two time-related variables:  
+Tdays - how many days passed from the first measurement to the start of each outgrowth, this will be the coefficients T in the equations to fit the model   
+tOut - How many days passed from the moment the outgrowth was started to the moment each read occurred.
 ```matlab
 odTh=0.22;
 ExpBgDataAll = calculaTiempos(ExpBgDataAll, plt, odTh)
 ```
-
+  
+Then we subtract the background signal from wells that only have the WTrfp or WTcfp strain.
 ```matlab
 %% Prepare input variables
 exp=1; % We put 1 because we have a structure only with exponential points which is the output of 'ExtractExponentialPoints'
@@ -49,6 +52,9 @@ OnlyRefStrain = [96]; %Index or Indexes of the reference wells that have only WT
 BgDataSinFondo = restarFondoFPs(bgdataPrueba, plt, OnlyMutStrain,OnlyRefStrain)
 ```
 
+
+Then we are ready to call the fitting function regress which is inside the ModelASGC script.  
+To do so this script first builds the predictor matrix and response vector taking into account which wells are WTrfp+WTcfp reference competitions, which have only one fluorescent strain and that they have enough valid measurements. After fitting the data to the model it organizes variables A, S, G and C and some statistics to the output structures.
 ```matlab
 % Prepare input variables
 medicionesminimas=[15]; %Smallest number of valid measurements per well to be included in the fitting function
@@ -56,8 +62,9 @@ extraPlRefs = 0; % The number of an extra plate that has references in it. Put 0
 % Execute Linear Model fitting script
 [bgdataAll_LM,data2_LM]=ModelASGC(BgDataSinFondo,plt,refs,OnlyMutStrain,OnlyRefStrain,medicionesminimas,exp,extraPlRefs)
 ```
+bgdataAll_LM contains the coefficients A, S, G and C for each well, then you can find out whether your mutant strains increased or decreased lifespan.
 
-
+In this example we show what happened to nine mutants whit 6 or 7 biological replicates each.
 ```matlab
 %% See S to make sure it makes sense
 campos = fieldnames(muts);

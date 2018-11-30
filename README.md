@@ -3,7 +3,7 @@
 Here we describe how to run scripts that fit plate measurements of aging fluorescent co-cultures to the model Ax+ST+Gt+CTt = ln(RFP/CFP) .
 
 Please find functions in [Github_AbrahamAvelar](https://github.com/AbrahamAvelar)  
-Most of them are in this [repository](https://github.com/AbrahamAvelar/Comparacion_Metodos_Envejecimiento/tree/master/Functions/CorrerModeloNS_ScriptsEGG)
+Most of them are in this [repository](https://github.com/AbrahamAvelar/Comparacion_Metodos_Envejecimiento/tree/master/Functions/CorrerModeloNS_ScriptsEGG)  
 [Here](https://github.com/AbrahamAvelar/LinearModelCLS/blob/master/Example.md) You can download sample Data and run scripts as an example.
 
   

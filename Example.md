@@ -31,15 +31,15 @@ Tiempo0 =1;
 showfig=1;
 ExpBgDataAll =  ExtractExponentialPoints(BgDataAllTest, plt, showfig, refs, Tiempo0 )
 ```
-If you used 'showfig'
+If you used ```showfig = 1``` then one figure per plate should be printed to the screen. They show all of the measurements with lines and circles show the selected measurements that were extracted by the function.
   
 Then we compute T
-```markdown
+```matlab
 odTh=0.22;
 ExpBgDataAll = calculaTiempos(ExpBgDataAll, plt, odTh)
 ```
 
-```markdown
+```matlab
 %% Prepare input variables
 exp=1; % We put 1 because we have a structure only with exponential points which is the output of 'ExtractExponentialPoints'
 bgdataPrueba=BgDataAll2bgdataEGG(ExpBgDataAll,plt,'CFP','RFP',exp); 
@@ -49,7 +49,7 @@ OnlyRefStrain = [96]; %Index or Indexes of the reference wells that have only WT
 BgDataSinFondo = restarFondoFPs(bgdataPrueba, plt, OnlyMutStrain,OnlyRefStrain)
 ```
 
-```markdown
+```matlab
 % Prepare input variables
 medicionesminimas=[15]; %Smallest number of valid measurements per well to be included in the fitting function
 extraPlRefs = 0; % The number of an extra plate that has references in it. Put 0 if you have references in every plate.
@@ -58,7 +58,7 @@ extraPlRefs = 0; % The number of an extra plate that has references in it. Put 0
 ```
 
 
-```markdown
+```matlab
 %% See S to make sure it makes sense
 campos = fieldnames(muts);
 clf

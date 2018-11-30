@@ -4,7 +4,7 @@ Here we describe how to run scripts that fit plate measurements of aging fluores
 
 Please find functions in [Github_AbrahamAvelar](https://github.com/AbrahamAvelar)  
 Most of them are in this [repository](https://github.com/AbrahamAvelar/Comparacion_Metodos_Envejecimiento/tree/master/Functions/CorrerModeloNS_ScriptsEGG)  
-[Here](https://github.com/AbrahamAvelar/LinearModelCLS/blob/master/Example.md) You can download sample Data and run scripts as an example.
+[Here](https://abrahamavelar.github.io/LinearModelCLS/Example) You can download sample Data and run scripts as an example.
 
   
 ### The goal is to run the function ModelASGC as follows:  

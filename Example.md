@@ -7,8 +7,7 @@ First you should download sample data [BgDataAllTest](https://github.com/Abraham
 Next thing is to load it into your Matlab workspace  
 ```markdown
 load BgDataAllTest
-'''
-
+```
 '>>BgDataAllTest
 
 BgDataAllTest = 

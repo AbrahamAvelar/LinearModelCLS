@@ -1,11 +1,30 @@
 ## Example with sample data
 
-You can follow this example to fit measurements from 2 plates of aging fluorescent co-cultures to the model Ax+ST+Gt+CTt = ln(RFP/CFP).
+You can follow this example to fit measurements from 2 plates of aging fluorescent co-cultures to the model Ax+ST+Gt+CTt = ln(RFP/CFP).  
 
-  
+First you should download sample data [BgDataAllTest](https://github.com/AbrahamAvelar/LinearModelCLS/).  
+
+Next thing is to load it into your Matlab workspace  
 ```markdown
 load BgDataAllTest
-```
+'''
+
+'>>BgDataAllTest
+
+BgDataAllTest = 
+1x2 struct array with fields:
+    OD
+    CFP
+    RFP
+    t
+' 
+%There are two variables loaded. While 'muts' has the positions for each mutants in this exaple, you must make sure that the BgDataAllTest structure has the relevant fields OD, CFP, RFP, and t.  Your structure may have other fields but it must contain these four. If you have a structure with other names in the fields, the function [BgDataAll2bgdataEGG](https://github.com/AbrahamAvelar/Comparacion_Metodos_Envejecimiento/tree/master/Functions/CorrerModeloNS_ScriptsEGG/PrepareRawDataToCalcNS) may be useful.
+
+    
+
+
+
+
 
  ```markdown
 refs = muts.refs

@@ -12,7 +12,7 @@ Next thing is to load it into your Matlab workspace
 ```matlab
 load BgDataAllTest
 ```
-we see what's in this structure
+See what's in this structure
 ```matlab
 >>BgDataAllTest
 

@@ -4,6 +4,7 @@ Here we describe how to run scripts that fit plate measurements of aging fluores
 
 Please find functions in [Github_AbrahamAvelar](https://github.com/AbrahamAvelar)  
 Most of them are in this [repository](https://github.com/AbrahamAvelar/Comparacion_Metodos_Envejecimiento/tree/master/Functions/CorrerModeloNS_ScriptsEGG)
+[Here](https://github.com/AbrahamAvelar/LinearModelCLS/blob/master/Example.md) You can download sample Data and run scripts as an example.
 
   
 ### The goal is to run the function ModelASGC as follows:  
@@ -11,6 +12,9 @@ Most of them are in this [repository](https://github.com/AbrahamAvelar/Comparaci
 [bgdataAll_LM,data2_LM]=ModelASGC(bgdata,plt,refs,OnlyMutStrain,OnlyRefStrain,medicionesminimas,exp,extraPlRefs);
 
 ```
+
+
+Here you will find 
 
 In order to get there, we select only those measurements in exponential phase using **ExtractExponentialPoints** after preparing input variables.
 

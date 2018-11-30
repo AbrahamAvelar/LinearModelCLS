@@ -60,7 +60,7 @@ Finally we are ready to run our fitting function. It will build the predictor va
 medicionesminimas=[i]; %Smallest number of valid measurements per well to be included in the fitting function
 extraPlRefs = 0; % The number of an extra plate that has references in it. Put 0 if you have references in every plate.
 # Execute Linear Model fitting script
-'[bgdataAll_LM,data2_LM]=ModelASGC(BgDataSinFondo,plt,refs,OnlyMutStrain,OnlyRefStrain,medicionesminimas,datExtExponential,extraPlRefs);'
+'[bgdataAll_LM,data2_LM]=ModelASGC(BgDataSinFondo,plt,refs,OnlyMutStrain,OnlyRefStrain,medicionesminimas,exp,extraPlRefs);'
 ```
 
 If you got here and the output bgdataAll_LM that contains your dataset and the vectors of solutions A, S, G and C it means you've made it to work! congratulations!

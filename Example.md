@@ -8,7 +8,9 @@ Next thing is to load it into your Matlab workspace
 ```markdown
 load BgDataAllTest
 ```
-'>>BgDataAllTest
+we see what's in this structure
+```markdown
+>>BgDataAllTest
 
 BgDataAllTest = 
 1x2 struct array with fields:
@@ -16,7 +18,8 @@ BgDataAllTest =
     CFP
     RFP
     t
-' 
+```
+
 %There are two variables loaded. While 'muts' has the positions for each mutants in this exaple, you must make sure that the BgDataAllTest structure has the relevant fields OD, CFP, RFP, and t.  Your structure may have other fields but it must contain these four. If you have a structure with other names in the fields, the function [BgDataAll2bgdataEGG](https://github.com/AbrahamAvelar/Comparacion_Metodos_Envejecimiento/tree/master/Functions/CorrerModeloNS_ScriptsEGG/PrepareRawDataToCalcNS) may be useful.
 
     

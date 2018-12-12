@@ -1,6 +1,6 @@
 ## Example with sample data
 
-This is a step by step tutorial to fit the model A+ST+Gt+CTt = ln(RFP/CFP) to an specific dataset. If you whish to read the general case you should go to the [home of the site](https://abrahamavelar.github.io/LinearModelCLS/)
+This is a step by step tutorial to fit the model A+ST+Gt+CTt = ln(RFP/CFP) to a specific dataset. If you whish to read the general case you should go to the [home of the site](https://abrahamavelar.github.io/LinearModelCLS/)
 
 
 You can follow this example to fit measurements from 2 plates of aging fluorescent co-cultures to the model Ax+ST+Gt+CTt = ln(RFP/CFP). 

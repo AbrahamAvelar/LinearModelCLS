@@ -33,7 +33,7 @@ Before fitting the dataset to the model, we get the exponential phase measuremen
  ```matlab
 refs = muts.refs %We have the positions of reference competitions stored in this variable
 plt = 1:2; %because this example dataset has plates 1 and 2.
-Tiempo0 =1; %For lineal modeling fitting of relative survivorship analysis, it must be 1.
+Tiempo0 =1; %It must be 1 for lineal modeling fitting of relative survivorship analysis
 showfig=1;
 ExpBgDataAll =  ExtractExponentialPoints(BgDataAllTest, plt, showfig, refs, Tiempo0 )
 ```
@@ -41,7 +41,7 @@ If you used ```showfig = 1``` then one figure per plate should be printed to the
   
 Then we compute two time-related variables:  
 Tdays - how many days passed from the first measurement to the start of each outgrowth, this will be the coefficients T in the equations to fit the model   
-tOut - Is t in the model. It is a time measurement of how long passed from the moment of the last inocule of the outgrowth to each read, although it would be more intuitive expressed in hours, it is in days.
+tOut - It is a time measurement of how long passed from the moment of the inocule of the outgrowth to each read. Is t in the model. Although it would be more intuitive expressed in hours, it is in days.
 ```matlab
 odTh=0.22;
 ExpBgDataAll = calculaTiempos(ExpBgDataAll, plt, odTh)
@@ -90,3 +90,5 @@ for pl = plt
     title( strcat('Replicate', num2str(pl)) )
 end
 ```
+You should have a plot with all the measurements of S with each one of the plates in one subplot. If you do, you are ready to try it with your own data!.  
+The model puts NaNs in all the reference wells but by deffinition they are Sref=0 and Gref=0.

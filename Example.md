@@ -6,7 +6,7 @@ This is a step by step tutorial to fit the model A+ST+Gt+CTt = ln(RFP/CFP) to a 
 You can follow this example to fit measurements from 2 plates of aging fluorescent co-cultures to the model Ax+ST+Gt+CTt = ln(RFP/CFP). 
 First you should download sample data [BgDataAllTest](https://github.com/AbrahamAvelar/LinearModelCLS/).  
 
-All of the functions are in [Github_AbrahamAvelar](https://github.com/AbrahamAvelar). Most of them are in [this folder](https://github.com/AbrahamAvelar/Comparacion_Metodos_Envejecimiento/tree/master/Functions/CorrerModeloNS_ScriptsEGG)  
+All of the functions are in [Github_AbrahamAvelar](https://github.com/AbrahamAvelar). Most of them are in [this folder](https://github.com/AbrahamAvelar/Comparacion_Metodos_Envejecimiento/tree/master/Functions/CorrerModeloNS_ScriptsEGG) and some others in [this other folder](https://github.com/AbrahamAvelar/Curvas_de_Crecimiento)
 
 
 Next thing is to load it into your Matlab workspace  
@@ -25,14 +25,15 @@ BgDataAllTest =
     t
 ```
 
-There are two variables loaded the most important at this point is the structure BgDataAllTest. While the variable 'muts' has the positions for each mutants in this exaple, you must make sure that the BgDataAllTest structure has the relevant fields OD, CFP, RFP, and t.  Your structure may have other fields but it must contain these four. If you have a structure with other names in the fields, the function [BgDataAll2bgdataEGG](https://github.com/AbrahamAvelar/Comparacion_Metodos_Envejecimiento/tree/master/Functions/CorrerModeloNS_ScriptsEGG/PrepareRawDataToCalcNS) may be useful.
+The most important variable loaded at this point is the structure BgDataAllTest. While the variable 'muts' has the positions for each mutants in this exaple, you must make sure that the BgDataAllTest structure has the relevant fields OD, CFP, RFP, and t.  Your structure may have other fields but it must contain these four. CFP is the color of the reference strain in WT+mutant competitions.  
+If you have a structure with other names in the fields, the function [bgdataAll2BgDataAll](https://github.com/AbrahamAvelar/Comparacion_Metodos_Envejecimiento/blob/master/Functions/bgdataAll2BgDataAll.m) may be useful.
 
 
 Before fitting the dataset to the model, we get the exponential phase measurements.
  ```matlab
 refs = muts.refs %We have the positions of reference competitions stored in this variable
 plt = 1:2; %because this example dataset has plates 1 and 2.
-Tiempo0 =1; 
+Tiempo0 =1; %For lineal modeling fitting of relative survivorship analysis, it must be 1.
 showfig=1;
 ExpBgDataAll =  ExtractExponentialPoints(BgDataAllTest, plt, showfig, refs, Tiempo0 )
 ```
@@ -40,7 +41,7 @@ If you used ```showfig = 1``` then one figure per plate should be printed to the
   
 Then we compute two time-related variables:  
 Tdays - how many days passed from the first measurement to the start of each outgrowth, this will be the coefficients T in the equations to fit the model   
-tOut - How many days passed from the moment the outgrowth was started to the moment each read occurred.
+tOut - Is t in the model. It is a time measurement of how long passed from the moment of the last inocule of the outgrowth to each read, although it would be more intuitive expressed in hours, it is in days.
 ```matlab
 odTh=0.22;
 ExpBgDataAll = calculaTiempos(ExpBgDataAll, plt, odTh)

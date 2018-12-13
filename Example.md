@@ -81,7 +81,7 @@ for pl = plt
     hold on
     for i=1:length(campos)
         thisY = bgdataAll_LM(pl).S(muts.(str2mat(campos(i)))) ;
-        jitterplot( i, thisY,  .2, '.', 'k')
+        JitterPlot( i, thisY,  .2, '.', 'k')
     end
     xlim([0 i+.5])
     ylim([-.3 .2])

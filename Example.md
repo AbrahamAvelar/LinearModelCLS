@@ -91,4 +91,4 @@ for pl = plt
 end
 ```
 You should have a plot with all the measurements of S with each one of the plates in one subplot. If you do, you are ready to try it with your own data!.  
-The model puts NaNs in all the reference wells but by deffinition they are Sref=0 and Gref=0.
+The script sets al reference wells to NaN but by deffinition of the model they are Sref=0 and Gref=0.

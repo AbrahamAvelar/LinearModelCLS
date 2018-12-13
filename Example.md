@@ -9,7 +9,7 @@ First you should download sample data [BgDataAllTest](https://github.com/Abraham
 All of the functions are in [Github_AbrahamAvelar](https://github.com/AbrahamAvelar). Most of them are in [this folder](https://github.com/AbrahamAvelar/Comparacion_Metodos_Envejecimiento/tree/master/Functions/CorrerModeloNS_ScriptsEGG) and some others in [this other folder](https://github.com/AbrahamAvelar/Curvas_de_Crecimiento)
 
 
-Next thing is to load it into your Matlab workspace  
+Next thing is to load the sample dataset it into your Matlab workspace  
 ```matlab
 load BgDataAllTest
 ```
